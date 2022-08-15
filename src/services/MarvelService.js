@@ -28,6 +28,8 @@ class MarvelService {
         let descr = '';
         if (char.description.length === 0) {
             descr = 'The information about this character is empty!'
+        } else if (char.description.length >= 210) {
+            descr = char.description.slice(0, 200) + '...'
         } else {
             descr = char.description
         }
@@ -46,6 +48,4 @@ class MarvelService {
 }
 
 export default MarvelService;
-
-
 
