@@ -25,14 +25,27 @@ class MarvelService {
     }
 
     _transformCharacter = (char) => {
+        let descr = '';
+        if (char.description.length === 0) {
+            descr = 'The information about this character is empty!'
+        } else {
+            descr = char.description
+        }
+        console.log(descr)
+
         return {
             name: char.name,
-            description: char.description,
+            description: descr,
             thumbnail: char.thumbnail.path + '.' + char.thumbnail.extension,
             homepage: char.urls[0].url,
             wiki: char.urls[1].url
         }
+
+
     }
 }
 
 export default MarvelService;
+
+
+
